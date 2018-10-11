@@ -14,7 +14,7 @@ public class MyController
 
     private GreetingService greetingService;
 
-    //Bez qualifiera bedzie injekcja @primary bean
+    //Bez qualifiera bedzie injekcja @primary bean z odpowiedniego profilu
     @Autowired
     public MyController(GreetingService greetingService)
     {
