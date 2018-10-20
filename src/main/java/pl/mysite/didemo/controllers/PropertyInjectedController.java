@@ -4,7 +4,6 @@ Author: BeGieU
 Date: 27.09.2018
 */
 
-import org.omg.CORBA.PUBLIC_MEMBER;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import pl.mysite.didemo.services.GreetingService;
@@ -16,7 +15,7 @@ import pl.mysite.didemo.services.GreetingServiceImpl;
 /*UWAGA!!!
  * ten przyklad pokazuje jak nie robic dependency injection
  * i wogole nie pisac kodu
-  * */
+ * */
 @Controller
 public class PropertyInjectedController
 {

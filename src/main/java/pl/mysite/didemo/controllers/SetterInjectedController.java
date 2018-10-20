@@ -17,13 +17,12 @@ public class SetterInjectedController
     private GreetingService greetingService;
 
     /*
-    * Setter injection jest generalnie gorsze od Constructor injection
-    * ale jego zastosowanie to wtedy gdy inicjaliizacja jakiegos pola
-    * nie jest obowiazkowa a opcjonalna */
+     * Setter injection jest generalnie gorsze od Constructor injection
+     * ale jego zastosowanie to wtedy gdy inicjaliizacja jakiegos pola
+     * nie jest obowiazkowa a opcjonalna */
     @Autowired
     public void setGreetingService(
-            @Qualifier("setterGreetingService") GreetingService greetingService
-    )
+            @Qualifier("setterGreetingService") GreetingService greetingService)
     {
         this.greetingService = greetingService;
     }
@@ -31,7 +30,7 @@ public class SetterInjectedController
 
     public String sayHello()
     {
-        return   greetingService.sayGreeting();
+        return greetingService.sayGreeting();
     }
 
 }

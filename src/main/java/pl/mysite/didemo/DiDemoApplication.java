@@ -8,6 +8,11 @@ import pl.mysite.didemo.controllers.MyController;
 import pl.mysite.didemo.controllers.PropertyInjectedController;
 import pl.mysite.didemo.controllers.SetterInjectedController;
 
+/*
+* //defultowo componentscan jest wlaczany dla wszystkich packages
+* znajdujacych sie ponizej package gdzie jest annotacja
+* @SpringBootApplication
+* mozna to zmienic za pomoca @ComponentScan*/
 @SpringBootApplication
 public class DiDemoApplication
 {
