@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import pl.mysite.didemo.controllers.MyController;
 import pl.mysite.didemo.examplebeans.FakeDataSource;
+import pl.mysite.didemo.examplebeans.FakeJmsBroker;
 
 /*
  * //defultowo componentscan jest wlaczany dla wszystkich packages
@@ -28,6 +29,11 @@ public class DiDemoApplication
         FakeDataSource fakeDataSource = (FakeDataSource) appContext.getBean(FakeDataSource.class);
 
         System.out.println(fakeDataSource.getUser());
+
+        FakeJmsBroker fakeJmsBroker =
+                (FakeJmsBroker) appContext.getBean("fakeJmsBroker", FakeJmsBroker.class);
+
+        System.out.println(fakeJmsBroker.getUsername());
 
 
     }
