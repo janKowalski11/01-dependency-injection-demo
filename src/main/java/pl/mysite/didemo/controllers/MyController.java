@@ -5,16 +5,19 @@ Date: 26.09.2018
 */
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import pl.mysite.didemo.services.GreetingService;
 
-@Controller
+
 public class MyController
 {
 
     private GreetingService greetingService;
 
-    //Bez qualifiera bedzie injekcja @primary bean z odpowiedniego profilu
+   /* Bez qualifiera bedzie injekcja @primary bean z odpowiedniego profilu
+
+    Spring widzi tylko Beany z wlaczonego profilu !!! Gdy nie ma profilu
+    w properties to spring i tak nie widzi beanow oznaczonych profilami
+    widzi tyko te bez profilu */
     @Autowired
     public MyController(GreetingService greetingService)
     {

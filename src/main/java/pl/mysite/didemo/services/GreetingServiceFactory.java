@@ -5,8 +5,11 @@ Date: 18.10.2018
 */
 
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class GreetingServiceFactory
 {
+    @Autowired
     private GreetingRepository greetingRepository;
 
     public GreetingServiceFactory(GreetingRepository greetingRepository)

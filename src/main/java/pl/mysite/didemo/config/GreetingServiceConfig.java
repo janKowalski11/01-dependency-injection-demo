@@ -10,10 +10,12 @@ Date: 18.10.2018
 * teraz korzysta z najpopularniejszej metody
 * pisania w springu czyli konfiguracji za pomaca
 * javy w tym pliku*/
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
+import pl.mysite.didemo.controllers.MyController;
 import pl.mysite.didemo.services.GreetingRepository;
 import pl.mysite.didemo.services.GreetingService;
 import pl.mysite.didemo.services.GreetingServiceFactory;
@@ -30,6 +32,7 @@ public class GreetingServiceConfig
     @Bean
     @Primary
     @Profile({"default","en"})
+    @Autowired
     public GreetingService primaryGreetingService(GreetingServiceFactory greetingServiceFactory)
     {
         return  greetingServiceFactory.createGreetingService("en");
@@ -38,6 +41,7 @@ public class GreetingServiceConfig
     @Bean
     @Primary
     @Profile({"es"})
+    @Autowired
     public GreetingService primarySpanishGreetingService(GreetingServiceFactory greetingServiceFactory)
     {
         return greetingServiceFactory.createGreetingService("es");
@@ -46,8 +50,17 @@ public class GreetingServiceConfig
     @Bean
     @Primary
     @Profile("de")
+    @Autowired
     public GreetingService primaryGermanGreetingService(GreetingServiceFactory greetingServiceFactory)
     {
         return greetingServiceFactory.createGreetingService("de");
+    }
+
+    @Bean
+    @Profile({"default","en"})
+    @Autowired
+    public MyController myController(GreetingServiceFactory greetingServiceFactory)
+    {
+        return new MyController(greetingServiceFactory.createGreetingService("en"));
     }
 }
