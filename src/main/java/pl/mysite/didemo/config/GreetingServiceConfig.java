@@ -24,6 +24,7 @@ import pl.mysite.didemo.services.GreetingServiceFactory;
 public class GreetingServiceConfig
 {
     @Bean
+    @Autowired
     public GreetingServiceFactory greetingServiceFactory(GreetingRepository repository)
     {
         return new GreetingServiceFactory(repository);
@@ -57,7 +58,6 @@ public class GreetingServiceConfig
     }
 
     @Bean
-    @Profile({"default","en"})
     @Autowired
     public MyController myController(GreetingServiceFactory greetingServiceFactory)
     {

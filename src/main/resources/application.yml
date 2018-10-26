@@ -1,0 +1,12 @@
+guru:
+  jms:
+    username: Jms username
+    password: Jms somepass
+    url: Jms Url
+
+--- #zamiast tworzyc osobny plik yml wystarczy taki znak dziala TYLKO DLA yml
+spring:
+  profiles: de
+guru:
+  jms:
+    username: JMS username DE PROFILE

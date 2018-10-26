@@ -1,0 +1,30 @@
+#comment
+
+name: John
+
+names:
+- John
+- Paul
+- Ringo
+
+book:
+  author: Joe Buck
+  publisher: Shit House
+
+
+truth: yes
+another_truth: True
+more_true: true
+
+false: no #No,false,FALSE
+
+string_val: "Quote: foo "
+
+include_new_lines: |
+  siasnsani niasi  ains nn
+  sakn nais nsa
+  sadn
+
+ignore_new_lines: >
+  dsaad sas dadsdsaads
+  dsacwe ef f4ewfc vee

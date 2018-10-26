@@ -15,10 +15,10 @@ Date: 25.10.2018
 */
 
 /*Jesli properties umiesci sie w pliku application.properties
-* czyli pliku konfigurcji springa to nie trzeba podawac do
-* niego classpath i to jest najlepsze i najaktualniejsze rozwiazanie
-* korzystanie z pliku konfiguracyjnego spring application.properties
-* reszta jms.prop i datasource.prop to legacy code*/
+ * czyli pliku konfigurcji springa to nie trzeba podawac do
+ * niego classpath i to jest najlepsze i najaktualniejsze rozwiazanie
+ * korzystanie z pliku konfiguracyjnego spring application.properties
+ * reszta jms.prop i datasource.prop to legacy code*/
 
 
 @Configuration
@@ -62,7 +62,7 @@ public class PropertyConfig
     public FakeDataSource fakeDataSource()
     {
         FakeDataSource fakeDataSource = new FakeDataSource(
-                environment.getProperty("USERNAME"),
+                user,
                 password,
                 url
         );
